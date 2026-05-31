@@ -1,0 +1,23 @@
+services:
+  bw-manager:
+    build: .
+    restart: unless-stopped
+    # ports:
+    #   - "3100:3000"
+    environment:
+      - NODE_ENV=production
+      - SESSION_SECRET=${SESSION_SECRET}
+      - BW_SERVER_URL=${BW_SERVER_URL}
+      - BW_CLIENTID=${BW_CLIENTID}
+      - BW_CLIENTSECRET=${BW_CLIENTSECRET}
+    volumes:
+      - bw-config:/root/.config/Bitwarden CLI
+    networks:
+      - dokploy-network
+
+volumes:
+  bw-config:
+
+networks:
+  dokploy-network:
+    external: true

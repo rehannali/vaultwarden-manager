@@ -1,0 +1,69 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0f1117;
+  --surface: #1a1d27;
+  --surface2: #22263a;
+  --border: #2e3247;
+  --text: #e2e4f0;
+  --muted: #8b90a8;
+  --accent: #7c6af5;
+  --accent-dim: #3d3870;
+  --green: #34d399;
+  --green-dim: #134e3a;
+  --amber: #fbbf24;
+  --amber-dim: #3d2f0a;
+  --red: #f87171;
+  --red-dim: #3d1010;
+  --teal: #2dd4bf;
+  --radius: 8px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-family: inherit;
+  transition: opacity 0.15s;
+}
+button:disabled { opacity: 0.45; cursor: not-allowed; }
+button:hover:not(:disabled) { opacity: 0.85; }
+
+input, select {
+  font-family: inherit;
+  font-size: 14px;
+  background: var(--surface2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  outline: none;
+  width: 100%;
+}
+input:focus, select:focus { border-color: var(--accent); }
+
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; font-weight: 500; color: var(--muted); font-size: 12px; padding: 8px 12px; border-bottom: 1px solid var(--border); text-transform: uppercase; letter-spacing: 0.04em; }
+td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+tr:hover td { background: var(--surface2); }
+
+.badge { display: inline-block; padding: 2px 8px; border-radius: 99px; font-size: 11px; font-weight: 500; }
+.badge-green { background: var(--green-dim); color: var(--green); }
+.badge-amber { background: var(--amber-dim); color: var(--amber); }
+.badge-red   { background: var(--red-dim);   color: var(--red); }
+.badge-purple{ background: var(--accent-dim); color: var(--accent); }
+
+.btn-primary { background: var(--accent); color: #fff; padding: 9px 18px; font-weight: 500; }
+.btn-ghost   { background: var(--surface2); color: var(--text); padding: 9px 18px; border: 1px solid var(--border); }
+.btn-danger  { background: var(--red-dim); color: var(--red); padding: 9px 18px; }
+.btn-sm      { padding: 5px 12px; font-size: 12px; }
